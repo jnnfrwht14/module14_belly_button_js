@@ -28,10 +28,11 @@ function init() {
     function buildMetaData(sample) {
         d3.json(bbUrl).then((data) => {
             let metadata = data.metadata;
-            let value = metadata.filter(result => result.id ==sample);
+            let value = metadata.filter(result => result.id == sample);
             console.log(value)
         
             let valueData = value[0];
+
             d3.select("#sample-metadata").html("");
             Object.entries(valueData).forEach(([key, value]) => {
                 console.log(key, value);
@@ -43,7 +44,7 @@ function init() {
     function buildBarChart(sample) {
         d3.json(bbUrl).then((data) => {
                 let sampleInfo = data.samples;
-                let value = sampleInfo.filter(result => result.id ==sample);
+                let value = sampleInfo.filter(result => result.id == sample);
                 let valueData = value[0];
                 let otu_ids = valueData.otu_ids;
                 let otu_labels = valueData.otu_labels;
@@ -55,7 +56,21 @@ function init() {
                 let yticks = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
                 let labels = otu_labels.slice(0,10).reverse();
     
+                let trace = {
+                    x: xticks,
+                    y: yticks,
+                    text: labels,
+                    type: "bar",
+                    orientation: "h"
+                    
+                }
         });
+
+    };
+
+    function buildBubbleChart(sample) {
+        
+
 
     };
   
