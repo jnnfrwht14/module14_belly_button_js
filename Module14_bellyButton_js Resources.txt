@@ -1,0 +1,8 @@
+Module14_bellyButton_js Resources
+
+
+https://nodepit.com/node/org.knime.dynamic.js.v30.DynamicJSNodeFactory%23Bubble%20Chart%20(Plotly)?numPredecessors=999999
+
+https://d3js.org/d3-scale-chromatic/categorical
+
+https://d3js.org/d3-color
