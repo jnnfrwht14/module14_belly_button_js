@@ -7,6 +7,10 @@ console.log("Belly Button: ", bellyButton);
 // Fetch the JSON data and console log it
 d3.json(bbUrl).then(function(data){console.log(data)});
 
+
+let values = sample_values.map(function (row){
+    return row.ids
+});
 //trace for the belly button data
 let trace1 = {
     x:
