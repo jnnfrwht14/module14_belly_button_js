@@ -1,8 +1,15 @@
 Module14_bellyButton_js Resources
 
 
+Chart help:
+https://plotly.com/javascript/bubble-charts/
+
 https://nodepit.com/node/org.knime.dynamic.js.v30.DynamicJSNodeFactory%23Bubble%20Chart%20(Plotly)?numPredecessors=999999
 
+Color help:
 https://d3js.org/d3-scale-chromatic/categorical
 
 https://d3js.org/d3-color
+
+Dropdown help:
+https://stackoverflow.com/questions/59974916/how-to-add-an-index-to-each-option-as-a-value
