@@ -58,6 +58,11 @@ function init() {
                 d3.select("#sample-metadata").append('h6').text(`${key}: ${value}`);
                 console.log(key, value);
             });
+
+            // for (let i = 0; i < metadata.row; i++) {
+            //     key[valueData[i].value] += valueData[i][metadata];
+            //     console.log(value.row);
+            // };
         });
     };
 
@@ -67,6 +72,7 @@ function init() {
             let sampleInfo = data.samples;
             let value = sampleInfo.filter(result => result.id == sample);
             let valueData = value[0];
+
             let otu_ids = valueData.otu_ids;
             let otu_labels = valueData.otu_labels;
             let sample_values = valueData.sample_values;
