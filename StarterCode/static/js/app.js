@@ -2,7 +2,9 @@
 const bbUrl = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
 // Fetch the JSON data and console log it
-d3.json(bbUrl).then(function(data){console.log(data)});
+d3.json(bbUrl).then(function(data){
+    console.log(data);
+});
 
 function init() {
    let dropdownMenu = d3.select("#selDataSet");
@@ -11,22 +13,22 @@ function init() {
         
     let names = data.names;
         
-        names.forEach((id) => {
-            console.log(id);
+    names.forEach((id) => {
+        console.log(id);
             
-            dropdownMenu.append('option')
-            .text(id)
-            .property('value', id);
-        });
+        dropdownMenu.append('option')
+        .text(id)
+        .property('value', id);
+    });
 
-        let picksample = names[0];
-        console.log(picksample);
+    let picksample = names[0];
+    console.log(picksample);
 
-        buildMetaData(picksample);
-        buildBarChart(picksample);
-        buildBubbleChart(picksample);
+    buildMetaData(picksample);
+    buildBarChart(picksample);
+    buildBubbleChart(picksample);
 
-        var selectDropdown = d3.select("#selDataset");
+    var selectDropdown = d3.select("#selDataset");
 
     function addOptions() {
        d3.json(bbUrl).then(function(data) {
@@ -54,15 +56,15 @@ function init() {
             console.log(value[2])
             d3.select("#sample-metadata").html("");
 
-            Object.entries(valueData).forEach(([key, value]) => {
+            Object.entries(valueData).forEach(([key,value]) => {
                 d3.select("#sample-metadata").append('h6').text(`${key}: ${value}`);
-                console.log(key, value);
+                console.log(key,value);
             });
 
-            // for (let i = 0; i < metadata.row; i++) {
-            //     key[valueData[i].value] += valueData[i][metadata];
-            //     console.log(value.row);
-            // };
+            for (let i = 0; i < metadata.row; i++) {
+                key[valueData[i].value] += valueData[i][metadata];
+                console.log("Did we get it?");
+            };
         });
     };
 
@@ -112,7 +114,7 @@ function init() {
             let value = sampleInfo.filter(result => result.id == sample);
             let valueData = value[0];
 
-            let otu_ids = valueData.otu_ids;
+            var otu_ids = valueData.otu_ids;
             let otu_labels = valueData.otu_labels;
             let sample_values = valueData.sample_values;
 
