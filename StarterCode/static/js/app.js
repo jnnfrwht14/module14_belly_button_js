@@ -56,7 +56,7 @@ function init() {
 
             Object.entries(valueData).forEach(([key, value]) => {
                 d3.select("#sample-metadata").append('h6').text(`${key}: ${value}`);
-                console.log(Object.keys(value));
+                console.log(key, value);
             });
         });
     };
@@ -64,14 +64,14 @@ function init() {
     function buildBarChart(sample) {
         d3.json(bbUrl).then((data) => {
                 
-                let sampleInfo = data.samples;
-                let value = sampleInfo.filter(result => result.id == sample);
-                let valueData = value[0];
-                let otu_ids = valueData.otu_ids;
-                let otu_labels = valueData.otu_labels;
-                let sample_values = valueData.sample_values;
+            let sampleInfo = data.samples;
+            let value = sampleInfo.filter(result => result.id == sample);
+            let valueData = value[0];
+            let otu_ids = valueData.otu_ids;
+            let otu_labels = valueData.otu_labels;
+            let sample_values = valueData.sample_values;
 
-                console.log(otu_ids, otu_labels, sample_values);
+            console.log(otu_ids, otu_labels, sample_values);
 
                 //select top 10 items
                 let xticks = sample_values.slice(0,10).reverse();
@@ -134,13 +134,13 @@ function init() {
 
         });
     };
+    //update charts
+    function optionChanged(testId) {
+        console.log(testId);
 
-    function optionChanged(value) {
-        console.log(value);
-
-        buildMetaData(value);
-        buildBarChart(value);
-        buildBubbleChart(value);
+        buildMetaData(testId);
+        buildBarChart(testId);
+        buildBubbleChart(testId);
     };
      
   init();
