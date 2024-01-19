@@ -56,15 +56,15 @@ function init() {
             console.log(value[2])
             d3.select("#sample-metadata").html("");
 
-            Object.entries(valueData).forEach(([key,value]) => {
+            Object.entries(valueData).forEach(([key, value]) => {
                 d3.select("#sample-metadata").append('h6').text(`${key}: ${value}`);
-                console.log(key,value);
+                console.log(key, value);
             });
 
-            for (let i = 0; i < metadata.row; i++) {
-                key[valueData[i].value] += valueData[i][metadata];
-                console.log("Did we get it?");
-            };
+            // for (let i = 0; i < X.r; i++) {
+            //     key[valueData[i].value] += valueData[i][metadata];
+            //     console.log("Did we get it?");
+            // };
         });
     };
 
