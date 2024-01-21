@@ -59,13 +59,11 @@ function buildMetadata(sample) {
         // Get the first index from the array
         let valueData = value[0];
 
-        // Clear out metadata
         d3.select("#sample-metadata").html("");
 
         // Use Object.entries to add each key/value pair to the panel
         Object.entries(valueData).forEach(([key,value]) => {
 
-            // Log the individual key/value pairs as they are being appended to the metadata panel
             console.log(key,value);
 
             d3.select("#sample-metadata").append("p").text(`${key}: ${value}`);
@@ -83,8 +81,6 @@ function buildBarChart(sample) {
      
         let sampleInfo = data.samples;
         let value = sampleInfo.filter(result => result.id == sample);
-
-        // Get the first index from the array
         let valueData = value[0];
 
         // Get the otu_ids, lables, and sample values
@@ -95,7 +91,7 @@ function buildBarChart(sample) {
         // Log the data
         console.log(otu_ids, otu_labels, sample_values);
 
-        // Set top ten items to display in descending order
+        // display in descending order
         let xticks = sample_values.slice(0,10).reverse();
         let yticks = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
         let labels = otu_labels.slice(0,10).reverse();
