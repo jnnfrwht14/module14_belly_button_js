@@ -1,7 +1,7 @@
 # module14_belly_button_js
 
 ## Welcome to the world of belly button biodiversity!
-
+## GitHub Pages link: https://jnnfrwht14.github.io/module14_belly_button_js/
 ## I removed <script src="./static/js/bonus.js"></script> from the html file since I didn't intend to complete the bonus. 
 
 ## Within the Starter Code / static folder, you'll find the app2.js used to generate the charts. 
